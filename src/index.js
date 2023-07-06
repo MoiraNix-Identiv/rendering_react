@@ -1,17 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { CssBaseline } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
+//import { CssBaseline } from '@mui/material';
+//import { ThemeProvider } from '@mui/material/styles';
 import './index.css';
 import App from './App';
-import theme from './components/MUI/Theme'
+//import theme from './components/MUI/Theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider theme= {theme}>
-    <CssBaseline/>
     <App />
-  </ThemeProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
