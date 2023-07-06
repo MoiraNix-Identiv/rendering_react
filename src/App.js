@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import BWButton from './components/buttons/BWButton';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
       <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <img src={logo} className="App-logo" alt="logo" siz/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,9 +17,9 @@ function App() {
         >
           Learn React
         </a>
+        <BWButton>Test OR</BWButton>
       </header>
     </div>
   );
 }
 
-export default App;
