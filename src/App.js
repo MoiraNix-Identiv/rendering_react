@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { ToggleButtonGroup } from "@mui/material";
+import CanvasContainer from "./components/container/CanvasContainer";
+import "./styles.css";
+import StyledButton from "./components/buttons/StyledButton";
 import styled from "@emotion/styled";
 
 // Watch the Button tutorial
@@ -9,6 +13,7 @@ import styled from "@emotion/styled";
 
 // Free Material-UI template
 // http://react.school/material-ui/templates
+
 
 const theme = {
   blue: {
@@ -57,7 +62,7 @@ const ButtonToggle = styled(Button)`
     opacity: 1; 
   `}
 `;
-
+/*
 const Tab = styled.button`
   padding: 10px 30px;
   cursor: pointer;
@@ -94,9 +99,9 @@ function TabGroup() {
       <p> Your payment selection: {active} </p>
     </>
   );
-}
+}*/
 
-const types = ["A", "B", "C"];
+const types = ["Generate Orthographic View", "Trigger Alarms", "Reset Alarms"];
 
 function ToggleGroup() {
   const [active, setActive] = useState(types[0]);
@@ -110,32 +115,30 @@ function ToggleGroup() {
     </div>
   );
 }
-
+//className = "bkImage" style = {{backgroundImage: `url(${background})` }}
 export default function App() {
   return (
     <>
       <div>
         <Button onClick={clickMe}>Button</Button>
-      </div>
-      <div>
-        <Button theme="pink" onClick={clickMe}>
+
+        <Button onClick={clickMe}>
           Pink theme
         </Button>
-      </div>
-      <div>
+
         <Button disabled onClick={clickMe}>
           Disabled
         </Button>
-      </div>
+
+        <StyledButton>Text here</StyledButton>
+
       <a href="https://react.school" target="_blank">
         <Button>Link</Button>
       </a>
+      </div>
       <ToggleGroup />
-      <TabGroup>
-
-
-        
-      </TabGroup>
+      <CanvasContainer/>
+      <CanvasContainer/>
     </>
   );
 }
