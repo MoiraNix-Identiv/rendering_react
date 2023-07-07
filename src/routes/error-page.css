@@ -1,0 +1,12 @@
+body {
+  
+    margin: 0;
+    display: block;
+    height: 100vh;
+    background-color: chartreuse;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter:  brightness(40%);
+    backdrop-filter:  opacity(40%);
+  
+  }

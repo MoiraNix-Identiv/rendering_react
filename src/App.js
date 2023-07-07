@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { ToggleButtonGroup } from "@mui/material";
-import CanvasContainer from "./components/container/CanvasContainer";
-import "./styles.css";
-import StyledButton from "./components/buttons/StyledButton";
 import styled from "@emotion/styled";
 
 // Watch the Button tutorial
@@ -130,15 +126,11 @@ export default function App() {
           Disabled
         </Button>
 
-        <StyledButton>Text here</StyledButton>
-
       <a href="https://react.school" target="_blank">
         <Button>Link</Button>
       </a>
       </div>
       <ToggleGroup />
-      <CanvasContainer/>
-      <CanvasContainer/>
     </>
   );
 }
