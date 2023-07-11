@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToggleButtonGroup } from "@mui/material";
+import ColorToggleButton  from "../../components/buttons/ColorToggleButton";
 import CanvasContainer from "../../components/container/CanvasContainer";
 import "./PACS.module.css";
 import StyledButton from "../../components/buttons/StyledButton";
@@ -7,10 +7,7 @@ import StyledButton from "../../components/buttons/StyledButton";
 export default function PACS() {
     return (
       <>
-        <div>
-          <StyledButton text = {"Text here"}></StyledButton>
-        </div>
-        <ToggleButtonGroup />
+        <ColorToggleButton />
         <CanvasContainer/>
         <CanvasContainer/>
       </>
