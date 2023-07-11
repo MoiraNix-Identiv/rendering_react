@@ -28,7 +28,7 @@ export default function BasicTable() {
 		{ field: "lastName", headerName: "Last Name", width: 150 },
 		{ field: "email", headerName: "Email", width: 150 },
 		{ field: "phone", headerName: "Phone", width: 150 },
-		{ field: "bank.cardNumber", headerName: "Badge Number", width: 150 },
+		{ field: item()?["bank.cardNumber", headerName: "Badge Number", width: 150 },
 		{ field: "bank.cardExpire", headerName: "Credentials Expire", width: 150 },
 		{ field: "address.Address", headerName: "Address", width: 150 },
 		
