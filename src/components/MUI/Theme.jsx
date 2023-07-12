@@ -1,27 +1,36 @@
 import { createTheme } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
+
  const theme = createTheme({
+    root: {
+        display: "flex",
+        },
     palette: {
         primary: {
-            main: grey[900],
-            //contrastText: '#ffffff',
+            main: '#444444',
+            dark: '#000000',
+            light: '#636363',
+            contrastText: '#ffffff',
         },
         //purple
         secondary: {
             main: '#4a2347',
-            dark: '#7638B4',
-            //contrastText: '#ffcc00',
+            dark: '#381C36',
+            light: '#7A3E75',
+            contrastText: '#ffcc00',
         },
         //red
         error: {
-            main: '#045c85',
-           // contrastText: '#ffcc00',
+            main: '#ce202f',
+            dark: '#A11B27',
+            light: '#D64551',
+            contrastText: '#0B5394',
         },
         //blue
         info: {
             main: '#045c85',
-            dark: '#68BDF7',
-            //contrastText: '#ffffff',
+            dark: '#033A54',
+            light: '#68BDF7',
+            contrastText: '#E88824',
 
         },
     },
@@ -31,18 +40,26 @@ import { grey } from '@mui/material/colors';
         h1: {
           fontFamily: ["Cinzel", "sans-serif"].join(","),
           fontSize: 36,
-        }
+        },
+        h2: {
+            fontFamily: "Lato, Arial",
+            fontSize: 20,
+            fontWeight: 700,
+            paddingBottom: 20,
+          },
       },
 
-      components: {
-        MuiButton: 
-        {
+      overrides: {
+        MuiButton:  {
+
+        cursor: 'Pointer',
+
            variants: 
            [
                 {       
                     props: { variant: "gradient", color: "grey" },
                     style: {
-                    background: `linear-gradient(45deg, ${grey[900]} 35%, ${grey[500]} 90%)`,
+                    background: `linear-gradient(45deg, ${'#000000'} 35%, ${'#444444'} 90%)`,
                     color: "#fff"
                     }
                 },
@@ -64,42 +81,33 @@ import { grey } from '@mui/material/colors';
         ],
          
         },
-        DataGrid: 
-        {
-           variants: 
+        DataGrid:  {
+           /*variants: 
            [
-                {       
+                {   */    
                     props: { variant: "primary"},
                     style: {
-                    background: `${grey[900]}`,
+                    background: '#444444',
                     color: "#ffffff",
                     m: 2,
                     boxShadow: 2,
                     border: 2,
                     borderColor: '#68BDF7',
                     '& .MuiDataGrid-cell:hover': {
-                        color: 'secondary.main',
+                        color: '#045c85',
                       },
                     }
-                },
-                {
-                        props: { variant: "gradient", color: "purple" },
-                        style: {
-                            background: `linear-gradient(45deg, ${'#7638B4'} 35%, ${'#4a2347'} 90%)`,
-                            color: "#ffffff"
-                    }
-                },
-                {
-                        props: { variant: "gradient", color: "info" },
-                        style: {
-                            background: `linear-gradient(45deg, ${'#68BDF7'} 35%, ${'#045c85'} 90%)`,
-                            color: "#ffffff"
-                    }
-                }   
+                /*},
+                
 
-        ],
+        ],*/
          
-        }
+        },
+        MuiAppBar: {
+            colorPrimary: {
+                backgroundColor: "#662E9B", 
+            },
+        },
     }
       
 });

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+import MuiAppBar from '@mui/material/MuiAppBar';
+import MuiToolbar from '@mui/material/MuiToolbar';
 import MuiButton from '@mui/material/Button';
 import StyledButton from '../buttons/StyledButton';
 import Container from '@mui/material/Container';
-import theme from './Theme';
+import {theme} from './Theme';
 import { ThemeProvider } from '@emotion/react';
+//import logo from '../../../public/favicon.ico'
 
 const pages = ['Home', 'Testing', 'Employees', 'PACS'];
 
@@ -21,23 +22,22 @@ function ResponsiveAppBar() {
 			return '/PACS';
 		}
 	}
+	const logo = '../../../public/favicon.ico';
 
 	return (
-		<ThemeProvider theme = {theme}>
-			<AppBar position='static' color='primary'>
+			<MuiAppBar position='static' sx={{color : "secondary.dark"}} title = {logo}>
 				<Container maxWidth='xl'>
-					<Toolbar disableGutters>
+					<MuiToolbar disableGutters>
 						{pages.map(page => (
-							<ThemeProvider theme = {theme}>
-								<MuiButton key={page} text={page} variant='gradient' color='grey' component='a' href={RouteTabClick(page)}>
-									{page}
-								</MuiButton>
-							</ThemeProvider>
+						<MuiButton key={page} text={page} variant = 'outlined' component='a' href={RouteTabClick(page)}>
+							{page}
+						</MuiButton>
 						))}
-					</Toolbar>
+
+					</MuiToolbar>
 				</Container>
-			</AppBar>
-		</ThemeProvider>
+
+			</MuiAppBar>
 	);
 }
 export default ResponsiveAppBar;

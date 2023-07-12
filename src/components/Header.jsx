@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import logo from '../images/identiv_logo.jpg';
 
 import { useNavigate } from "react-router-dom";
 
@@ -48,19 +49,18 @@ export default function Header() {
     setAnchorEl(null);
   };
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color= "inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={clickLeftMenu}
-          >
+            <IconButton
+              size="large"
+              edge="start"
+              color= "inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={clickLeftMenu}
+            >
             <MenuIcon />
           </IconButton>
 
@@ -76,25 +76,25 @@ export default function Header() {
                 component="nav"
                 aria-labelledby="nested-list-subheader"
               >
-                <ListItem onClick={() => redirectRoute("/")}>
+                <ListItem sx = {{cursor: 'pointer'}} onClick={() => redirectRoute("/")}>
                   <ListItemText primary="Home" />
                 </ListItem>
-                <ListItem button onClick={() => redirectRoute("/About")}>
-                  <ListItemText primary="About" />
+                <ListItem sx = {{cursor: 'pointer'}} onClick={() => redirectRoute("/About")}>
+                  <ListItemText  primary="About" />
                 </ListItem>
-                <ListItem onClick={clickFeatures}>
+                <ListItem sx = {{cursor: 'pointer'}} onClick={clickFeatures}>
                   <ListItemText button primary="Features" />
                   {openNested ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 <Collapse in={openNested} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
-                  <ListItem button onClick={() => redirectRoute("/Employees")}>
+                  <ListItem sx = {{cursor: 'pointer'}} onClick={() => redirectRoute("/Employees")}>
                       <ListItemText primary="Employees" />
                     </ListItem>
-                  <ListItem button onClick={() => redirectRoute("/PACS")}>
+                  <ListItem sx = {{cursor: 'pointer'}} onClick={() => redirectRoute("/PACS")}>
                       <ListItemText primary="PACS" />
                     </ListItem>
-                    <ListItem button onClick={() => redirectRoute("/Testing")}>
+                    <ListItem sx = {{cursor: 'pointer'}} onClick={() => redirectRoute("/Testing")}>
                       <ListItemText primary="Testing" />
                     </ListItem>
                   </List>

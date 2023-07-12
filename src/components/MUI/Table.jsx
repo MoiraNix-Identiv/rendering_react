@@ -2,17 +2,27 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
-import theme from './Theme';
+import myTheme from './Theme';
 import { ThemeProvider } from '@emotion/react';
+import { useTheme } from '@mui/material/styles';
 
 
 
 export default function BasicTable() {
-	const [rows, setRows] = useState([]);
+	const theme = useTheme();
+	const [rows, setRows, bankJson] = useState([]);
+
 	const fetchUsers = async () => {
-		await axios
-		.get('https://dummyjson.com/users')
-		.then((res) => setRows(res.data.users));
+		//vs code lies here about being able to remove this await
+		 await axios.get('https://dummyjson.com/users')
+		.then(
+			(res) => setRows(res.data.users))
+			 .catch
+			 {
+				//this calls at the beginning of the data fetch...?
+				//alert(['error fetching data']);
+			 };
+		 //bankJson = res.data.users.bank; 
 		};
 
 	useEffect(() => {
@@ -21,15 +31,15 @@ export default function BasicTable() {
 
 	
 
-	const columns = 
+	let columns = 
 	[
 		{ field: "id", headerName: "ID", width: 150 },
 		{ field: "firstName", headerName: "First Name", width: 150 },
 		{ field: "lastName", headerName: "Last Name", width: 150 },
 		{ field: "email", headerName: "Email", width: 150 },
 		{ field: "phone", headerName: "Phone", width: 150 },
-		{ field: item()?["bank.cardNumber", headerName: "Badge Number", width: 150 },
-		{ field: "bank.cardExpire", headerName: "Credentials Expire", width: 150 },
+		{ field: "bankJson.cardNumber", headerName: "Badge Number", width: 150 },
+		{ field: "bankJson.cardExpire", headerName: "Credentials Expire", width: 150 },
 		{ field: "address.Address", headerName: "Address", width: 150 },
 		
 	];
@@ -43,7 +53,7 @@ export default function BasicTable() {
 				</div>
 			</>)
 		: 
-		(<ThemeProvider theme = {theme}>
+		(<ThemeProvider theme = {myTheme}>
 			<DataGrid 
 				rows = {rows}
 				columns = {columns}
