@@ -1,11 +1,10 @@
 import React from "react";
-import backImg from "../../images/potatos.jpg";
+//import './Testing.module.css';
 
 function Testing() {
   return (
-    <div>
+    <div className="Testing.div">
       <h1>Test Page</h1>
-      <img src={backImg} alt={"potatos"}></img>
     </div>)};
   
   export default Testing;

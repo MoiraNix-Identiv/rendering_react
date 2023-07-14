@@ -16,21 +16,21 @@ import { createTheme } from '@mui/material/styles';
             main: '#4a2347',
             dark: '#381C36',
             light: '#7A3E75',
-            contrastText: '#ffcc00',
+            contrastText: '#ffffff',
         },
         //red
         error: {
             main: '#ce202f',
             dark: '#A11B27',
             light: '#D64551',
-            contrastText: '#0B5394',
+            contrastText: '#000000',
         },
         //blue
         info: {
             main: '#045c85',
             dark: '#033A54',
             light: '#68BDF7',
-            contrastText: '#E88824',
+            contrastText: '#ffcc00',
 
         },
     },

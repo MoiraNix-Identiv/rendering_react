@@ -2,7 +2,8 @@ import * as React from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import StyledButton from './StyledButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-
+import { ThemeProvider } from "@mui/material/styles";
+import myTheme from "../../components/MUI/Theme";
 export default function ColorToggleButton() {
   /*const [data , setData] = React.useState('');
 
@@ -19,16 +20,17 @@ export default function ColorToggleButton() {
   
 
   return (
-    <ToggleButtonGroup
-      color="primary"
-      value={alignment}
-      exclusive
-      onChange={handleChange}
-      aria-label="Platform"
-    >
-      <StyledButton className = "ModelButton" text = {"Generate Model"}>Web</StyledButton>
-      <StyledButton className = "AlarmsButton" text = {"Trigger Alarms"}>Trigger Alarms</StyledButton>
-      <StyledButton className = "ResetButton" text = {"Reset Scenario"}>Reset Alarms</StyledButton>
-    </ToggleButtonGroup>
+    <ThemeProvider theme = {myTheme}>
+      <ToggleButtonGroup
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+        aria-label="Platform"
+      >
+        <ToggleButton color="primary" className = "ModelButton" text = {"Generate Model"}>Web</ToggleButton>
+        <ToggleButton className = "AlarmsButton" text = {"Trigger Alarms"}>Trigger Alarms</ToggleButton>
+        <ToggleButton className = "ResetButton" text = {"Reset Scenario"}>Reset Alarms</ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
   );
 }

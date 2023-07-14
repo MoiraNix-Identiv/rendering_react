@@ -14,7 +14,7 @@ export default function BasicTable() {
 
 	const fetchUsers = async () => {
 		//vs code lies here about being able to remove this await
-		 await axios.get('https://dummyjson.com/users')
+		 await axios.get('https://localhost:7075/api/User')
 		.then(
 			(res) => setRows(res.data.users))
 			 .catch
@@ -30,7 +30,7 @@ export default function BasicTable() {
 	}, []);
 
 	
-
+	//this info should be able to be fed into it/ this should be done outside of this class.
 	let columns = 
 	[
 		{ field: "id", headerName: "ID", width: 150 },

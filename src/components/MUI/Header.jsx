@@ -1,24 +1,26 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+import ToggleButton from '@mui/material/ToggleButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu';
-import theme from './MUI/Theme';
+import theme from './Theme';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
-import logo from '../images/identiv_logo.jpg';
+import logo from '../../images/favicon.ico';
 
 import { useNavigate } from "react-router-dom";
+import { Button } from '@mui/material';
 
-export default function Header() {
+export default function Header(props) {
   
   let navigate = useNavigate();
 
@@ -49,8 +51,10 @@ export default function Header() {
     setAnchorEl(null);
   };
 
+  const img = <img style={{marginRight: 10}}src={logo}/>
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    //<Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
             <IconButton
@@ -60,6 +64,7 @@ export default function Header() {
               aria-label="menu"
               sx={{ mr: 2 }}
               onClick={clickLeftMenu}
+              title={img}
             >
             <MenuIcon />
           </IconButton>
@@ -105,9 +110,10 @@ export default function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Rendering Demo
           </Typography>
-
+          
+        <ToggleButton className = 'themeMode' onClick={this.props.handleToggle}>Dark Mode</ToggleButton>
         </Toolbar>
       </AppBar>
-    </Box>
+    //</Box>
   );
 }

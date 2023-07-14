@@ -6,7 +6,6 @@ import StyledButton from '../buttons/StyledButton';
 import Container from '@mui/material/Container';
 import {theme} from './Theme';
 import { ThemeProvider } from '@emotion/react';
-//import logo from '../../../public/favicon.ico'
 
 const pages = ['Home', 'Testing', 'Employees', 'PACS'];
 
@@ -22,10 +21,10 @@ function ResponsiveAppBar() {
 			return '/PACS';
 		}
 	}
-	const logo = '../../../public/favicon.ico';
+
 
 	return (
-			<MuiAppBar position='static' sx={{color : "secondary.dark"}} title = {logo}>
+			<MuiAppBar position='static' sx={{color : "secondary.dark"}}>
 				<Container maxWidth='xl'>
 					<MuiToolbar disableGutters>
 						{pages.map(page => (
