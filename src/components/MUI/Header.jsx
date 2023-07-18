@@ -20,7 +20,7 @@ import logo from '../../images/favicon.ico';
 import { useNavigate } from "react-router-dom";
 import { Button } from '@mui/material';
 
-export default function Header(props) {
+export default function Header() {
   
   let navigate = useNavigate();
 
@@ -111,9 +111,10 @@ export default function Header(props) {
             Rendering Demo
           </Typography>
           
-        <ToggleButton className = 'themeMode' onClick={this.props.handleToggle}>Dark Mode</ToggleButton>
+        
         </Toolbar>
       </AppBar>
     //</Box>
   );
 }
+//<ToggleButton className = 'themeMode' onClick={this.props.handleToggle}>Dark Mode</ToggleButton>

@@ -20,7 +20,6 @@ export default function ColorToggleButton() {
   
 
   return (
-    <ThemeProvider theme = {myTheme}>
       <ToggleButtonGroup
         value={alignment}
         exclusive
@@ -31,6 +30,5 @@ export default function ColorToggleButton() {
         <ToggleButton className = "AlarmsButton" text = {"Trigger Alarms"}>Trigger Alarms</ToggleButton>
         <ToggleButton className = "ResetButton" text = {"Reset Scenario"}>Reset Alarms</ToggleButton>
       </ToggleButtonGroup>
-    </ThemeProvider>
   );
 }

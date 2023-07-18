@@ -5,9 +5,8 @@ import { ThemeProvider } from '@mui/material';
 
 export default function StyledButton(props){
   return (
-    <ThemeProvider theme={myTheme}>
       <ToggleButton color ="secondary" variant="contained">{props.text}</ToggleButton>
-    </ThemeProvider>
+
   );
 }
 
